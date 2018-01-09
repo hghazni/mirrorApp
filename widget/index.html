@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="author" content="satya" />
+	<title>BTBP Mirror</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta name="HandheldFriendly" content="true" />
+	<link rel="shortcut icon" href="BTBP_icon_ico.ico" type="image/x-icon" />
+
+	<link rel="stylesheet" type="text/css" href="BTBP/css/btbp_mirror.css">
+
+	<script src="BTBP/js/vendor/jquery-1.11.0.js"></script>
+	<script src="BTBP/js/preloadjs-0.6.2.min.js"></script>
+	<script src="BTBP/js/BTBPMirror.js"></script>
+	<style>
+		._button {
+			background: #03111E;
+			border: 1px solid white;
+			border-radius: 3px;
+			color: white;
+			padding: 6px 12px;
+			cursor: pointer;
+		}
+
+	</style>
+
+</head>
+
+<body onload="onPageLoad()">
+	<div id="widget_controlls">
+	<table id="key_table">
+		<tr>
+			<td>
+				<strong>key: </strong>
+			</td>
+			<td>
+				<input type="text" id="key" value="" required>
+			</td>
+		</tr>
+	</table>
+	<h3>Mirror Configurations</h3>
+
+	<table id="feature_table">
+		<tr>
+			<td>
+				<strong>Deep Tag List</strong>
+			</td>
+
+		</tr>
+		<tr>
+			<td>
+				<input type="checkbox" id="deep_1_gender" value="Gender">
+				<label id="deep_1_gender" for="deep_1_gender">Gender</label>
+				<input type="checkbox" id="deep_2_age" value="Age">
+				<label for="deep_2_age">Age</label>
+				<input type="checkbox" id="deep_3_skin_type" value="Skin Type">
+				<label for="deep_3_skin_type">Skin Type</label>
+				<input type="checkbox" id="deep_4_air_quality" value="Air Quality">
+				<label for="deep_4_air_quality">Air Quality</label>
+				<input type="checkbox" id="deep_5_uv_index" value="UV Index">
+				<label for="deep_5_uv_index">UV Index</label>
+				<input type="checkbox" id="deep_6_location" value="Location">
+				<label for="deep_6_location">Location</label>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<strong>Skin Feature List</strong>
+			</td>
+		</tr>
+
+		<tr>
+			<td>
+				<input type="checkbox" id="deep_7_wrinkles" value="Wrinkles">
+				<label for="deep_7_wrinkles">Wrinkles</label>
+				<input type="checkbox" id="deep_8_acne" value="Acne">
+				<label for="deep_8_acne">Acne</label>
+				<input type="checkbox" id="deep_9_pores" value="Pores">
+				<label for="deep_9_pores">Pores</label>
+				<input type="checkbox" id="deep_10_spots" value="Spots">
+				<label for="deep_10_spots">Spots</label>
+				<input type="checkbox" id="deep_11_redness" value="Redness">
+				<label for="deep_11_redness">Redness</label>
+				<input type="checkbox" id="deep_12_uneven_skinTone" value="Uneven SkinTone">
+				<label for="deep_12_uneven_skinTone">Uneven SkinTone</label>
+				<input type="checkbox" id="deep_13_dark_circles" value="Dark Circles">
+				<label for="deep_13_dark_circles">Dark Circles</label>
+				<input type="checkbox" id="deep_14_lip_health" value="Lips">
+				<label for="deep_14_lip_health">Lips</label>
+				<input type="checkbox" id="deep_15_dehydration" value="Dehydration">
+				<label for="deep_15_dehydration">Dehydration</label>
+				<input type="checkbox" id="deep_16_Oiliness" value="Oiliness">
+				<label for="deep_16_Oiliness">Oiliness</label>
+			</td>
+
+		</tr>
+		<tr>
+			<td>
+				<strong>Beauty Feature List</strong>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<input type="checkbox" id="beauty_feature_1_lipstick" value="Lipstick">
+				<label for="beauty_feature_1_lipstick">Lipstick</label>
+				<input type="checkbox" id="beauty_feature_2_foundation" value="Foundation">
+				<label for="beauty_feature_2_foundation">Foundation</label>
+				<input type="checkbox" id="beauty_feature_3_complexion" value="Complexion">
+				<label for="beauty_feature_3_complexion">Complexion</label>
+			</td>
+
+		</tr>
+		
+		<tr>
+			<td>
+				<input type="checkbox" id="auto_reset_check_box" value="Auto Reset">
+				<label for="auto_reset_check_box">Auto Reset</label>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<input type="checkbox" id="show_settings_check_box" value="Show Settings">
+				<label for="show_settings_check_box">Show Settings</label>
+			</td>
+		</tr>
+	</table>
+
+
+
+	<button class="_button" onclick="showConfig()">Open Widget</button>
+	</div>
+	<button class="_button" onclick="window.location.reload();">Close Widget</button> 
+	<br/>
+	<br/>
+
+	<div id="mirror_content" style="position:relative;">
+
+	</div>
+
+
+	<script>
+
+		var mirror;
+		function startWidget(btbpConfig) {
+			/*
+			var btbpConfig = {
+				content: "mirror_content",
+				key: key,
+				mirror_config: {
+					BeautyFeatureList: ["Foundation"],
+					SkinFeatureList: ["Wrinkles", "Acne", "Spots", "Pores", "Redness", "Dehydration", "Uneven SkinTone", "Dark Circles", "Lip Health", "Oiliness"],
+					DeepTagList: ["Gender", "Age"],
+					auto_reset: false,
+					show_settings: true
+				}
+			};
+			*/
+			//btbpConfig.key = "1ATB-CVQG-XYYN-O5Q2";
+			mirror = new BTBPMirror(btbpConfig);
+			mirror.startMirror();
+			$("#widget_controlls").hide();
+		}
+
+
+		function stopWidget() {
+			mirror.stopMirror();
+		}
+	</script>
+
+	<script>
+		function onPageLoad() {
+			getCache();
+		}
+
+		function showConfig() {
+			var btbpConfig = {
+				content: "mirror_content",
+				key: '',
+				mirror_config: {
+					BeautyFeatureList: [],
+					SkinFeatureList: [],
+					DeepTagList: [],
+					auto_reset: true,
+					show_settings: true,
+					beautyFace: false,
+					auto_reset_time_interval: 1000 * 60 * 10
+				}
+			};
+
+			var key = $("#key").val();
+			if (key == undefined || key.length <= 0) {
+				alert("Please enter key");
+				return;
+			}
+
+			if ($("#deep_1_gender").is(":checked")) {
+
+				btbpConfig.mirror_config.DeepTagList.push($("#deep_1_gender").val());
+			}
+			if ($("#deep_2_age").is(":checked")) {
+				btbpConfig.mirror_config.DeepTagList.push($("#deep_2_age").val());
+
+			}
+			if ($("#deep_3_skin_type").is(":checked")) {
+				btbpConfig.mirror_config.DeepTagList.push($("#deep_3_skin_type").val());
+
+			}
+			if ($("#deep_4_air_quality").is(":checked")) {
+				btbpConfig.mirror_config.DeepTagList.push($("#deep_4_air_quality").val());
+
+			}
+
+			if ($("#deep_5_uv_index").is(":checked")) {
+
+				btbpConfig.mirror_config.DeepTagList.push($("#deep_5_uv_index").val());
+
+			}
+			if ($("#deep_6_location").is(":checked")) {
+				btbpConfig.mirror_config.DeepTagList.push($("#deep_6_location").val());
+			}
+
+
+			if ($("#deep_7_wrinkles").is(":checked")) {
+				btbpConfig.mirror_config.SkinFeatureList.push($("#deep_7_wrinkles").val());
+
+			}
+			if ($("#deep_8_acne").is(":checked")) {
+				btbpConfig.mirror_config.SkinFeatureList.push($("#deep_8_acne").val());
+
+			}
+
+			if ($("#deep_9_pores").is(":checked")) {
+
+				btbpConfig.mirror_config.SkinFeatureList.push($("#deep_9_pores").val());
+
+			}
+			if ($("#deep_10_spots").is(":checked")) {
+				btbpConfig.mirror_config.SkinFeatureList.push($("#deep_10_spots").val());
+			}
+
+			if ($("#deep_11_redness").is(":checked")) {
+				btbpConfig.mirror_config.SkinFeatureList.push($("#deep_11_redness").val());
+			}
+
+			if ($("#deep_12_uneven_skinTone").is(":checked")) {
+				btbpConfig.mirror_config.SkinFeatureList.push($("#deep_12_uneven_skinTone").val());
+
+			}
+			if ($("#deep_13_dark_circles").is(":checked")) {
+				btbpConfig.mirror_config.SkinFeatureList.push($("#deep_13_dark_circles").val());
+
+			}
+
+			if ($("#deep_14_lip_health").is(":checked")) {
+
+				btbpConfig.mirror_config.SkinFeatureList.push($("#deep_14_lip_health").val());
+			}
+
+
+			if ($("#deep_15_dehydration").is(":checked")) {
+				btbpConfig.mirror_config.SkinFeatureList.push($("#deep_15_dehydration").val());
+			}
+			if ($("#deep_16_Oiliness").is(":checked")) {
+				btbpConfig.mirror_config.SkinFeatureList.push($("#deep_16_Oiliness").val());
+
+			}
+			if ($("#beauty_feature_1_lipstick").is(":checked")) {
+				btbpConfig.mirror_config.BeautyFeatureList.push($("#beauty_feature_1_lipstick").val());
+
+			}
+
+			if ($("#beauty_feature_2_foundation").is(":checked")) {
+				btbpConfig.mirror_config.BeautyFeatureList.push($("#beauty_feature_2_foundation").val());
+
+			}
+
+			if ($("#beauty_feature_3_complexion").is(":checked")) {
+				btbpConfig.mirror_config.BeautyFeatureList.push($("#beauty_feature_3_complexion").val());
+
+			}
+
+
+			if ($("#auto_reset_check_box").is(":checked")) {
+				btbpConfig.mirror_config.auto_reset = true;
+
+			} else {
+				btbpConfig.mirror_config.auto_reset = false;
+			}
+			if ($("#show_settings_check_box").is(":checked")) {
+				btbpConfig.mirror_config.show_settings = true;
+
+			} else {
+				btbpConfig.mirror_config.show_settings = false;
+
+			}
+			btbpConfig.key = key;
+		
+			localStorage.clear(btbpConfig);
+			localStorage.setItem("btbpConfig", JSON.stringify(btbpConfig));
+
+			startWidget(btbpConfig);
+		}
+
+		function getCache() {
+			var retrieveObject = localStorage.getItem("btbpConfig");
+			var retrieveResultObj = JSON.parse(retrieveObject);
+			if (retrieveResultObj != null || retrieveResultObj != undefined) {
+				if (retrieveResultObj.key != undefined || retrieveResultObj.key != "") {
+					document.getElementById("key").value = retrieveResultObj.key;
+				}
+				if (retrieveResultObj.mirror_config.DeepTagList != null) {
+					for (var i = 0; i < retrieveResultObj.mirror_config.DeepTagList.length; i++) {
+						if (retrieveResultObj.mirror_config.DeepTagList[i] == "Gender") {
+							$("#deep_1_gender").attr('checked', true);
+
+						}
+						if (retrieveResultObj.mirror_config.DeepTagList[i] == "Age") {
+							$("#deep_2_age").attr('checked', true);
+
+						}
+						if (retrieveResultObj.mirror_config.DeepTagList[i] == "Skin Type") {
+							$("#deep_3_skin_type").attr('checked', true);
+
+						}
+						if (retrieveResultObj.mirror_config.DeepTagList[i] == "Air Quality") {
+							$("#deep_4_air_quality").attr('checked', true);
+
+						}
+
+						if (retrieveResultObj.mirror_config.DeepTagList[i] == "UV Index") {
+							$("#deep_5_uv_index").attr('checked', true);
+
+						}
+						if (retrieveResultObj.mirror_config.DeepTagList[i] == "Location") {
+							$("#deep_6_location").attr('checked', true);
+
+						}
+
+					}
+				}
+
+				if (retrieveResultObj.mirror_config.SkinFeatureList != null) {
+					for (var i = 0; i < retrieveResultObj.mirror_config.SkinFeatureList.length; i++) {
+
+						if (retrieveResultObj.mirror_config.SkinFeatureList[i] == "Wrinkles") {
+							$("#deep_7_wrinkles").attr('checked', true);
+
+						}
+						if (retrieveResultObj.mirror_config.SkinFeatureList[i] == "Acne") {
+							$("#deep_8_acne").attr('checked', true);
+
+						}
+
+						if (retrieveResultObj.mirror_config.SkinFeatureList[i] == "Pores") {
+							$("#deep_9_pores").attr('checked', true);
+
+						}
+						if (retrieveResultObj.mirror_config.SkinFeatureList[i] == "Spots") {
+							$("#deep_10_spots").attr('checked', true);
+
+						}
+						if (retrieveResultObj.mirror_config.SkinFeatureList[i] == "Redness") {
+							$("#deep_11_redness").attr('checked', true);
+
+						}
+						if (retrieveResultObj.mirror_config.SkinFeatureList[i] == "Uneven SkinTone") {
+							$("#deep_12_uneven_skinTone").attr('checked', true);
+
+						}
+						if (retrieveResultObj.mirror_config.SkinFeatureList[i] == "Dark Circles") {
+							$("#deep_13_dark_circles").attr('checked', true);
+
+						}
+
+						if (retrieveResultObj.mirror_config.SkinFeatureList[i] == "Lip Health") {
+							$("#deep_14_lip_health").attr('checked', true);
+
+						}
+						if (retrieveResultObj.mirror_config.SkinFeatureList[i] == "Dehydration") {
+							$("#deep_15_dehydration").attr('checked', true);
+
+						}
+						if (retrieveResultObj.mirror_config.SkinFeatureList[i] == "Oiliness") {
+							$("#deep_16_Oiliness").attr('checked', true);
+
+						}
+
+
+					}
+				}
+
+
+				if (retrieveResultObj.mirror_config.BeautyFeatureList != null) {
+
+					for (var i = 0; i < retrieveResultObj.mirror_config.BeautyFeatureList.length; i++) {
+
+						if (retrieveResultObj.mirror_config.BeautyFeatureList[i] == "Lipstick") {
+							$("#beauty_feature_1_lipstick").attr('checked', true);
+						}
+
+						
+						if (retrieveResultObj.mirror_config.BeautyFeatureList[i] == "Foundation") {
+							$("#beauty_feature_2_foundation").attr('checked', true);
+						}
+
+						if (retrieveResultObj.mirror_config.BeautyFeatureList[i] == "Complexion") {
+							$("#beauty_feature_3_complexion").attr('checked', true);
+						}
+					}
+				}
+				if (retrieveResultObj.mirror_config.auto_reset == true) {
+					$("#auto_reset_check_box").attr('checked', true);
+
+				}
+				if (retrieveResultObj.mirror_config.show_settings == true) {
+					$("#show_settings_check_box").attr('checked', true);
+				}
+
+				
+			}
+
+		}
+	</script>
+</body>
+
+</html>
+
+<!-- https://stackoverflow.com/questions/23789143/maintain-aspect-ratio-of-a-div-according-to-height -->
