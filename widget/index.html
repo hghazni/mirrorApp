@@ -126,7 +126,7 @@
 
 	<!--<button class="_button" onclick="showConfig()">Open Widget</button>-->
 	<!--</div>-->
-	<button class="_button" onclick="window.location.reload();">Close Widget</button>
+	<!--<button class="_button" onclick="window.location.reload();">Close Widget</button>-->
 	<br/>
 	<br/>
 
@@ -158,13 +158,6 @@
 	</script>
 
 	<script>
-        //Hides widget controls on document load
-        $( document ).ready(function() {
-            $("#widget_controlls").hide();
-        });
-	</script>
-
-	<script>
 		function onPageLoad() {
 			getCache();
             showConfig();
@@ -190,7 +183,7 @@
 
 			var key = $("#key").val();
 			if (key == undefined || key.length <= 0) {
-				alert("Please enter key");
+//				alert("Please enter key");
 				return;
 			}
 
