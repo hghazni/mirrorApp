@@ -190,239 +190,239 @@
             var mirror = new BTBPMirror(btbpConfig);
             mirror.startMirror();}
 
-//			var key = $("#key").val();
-//			if (key == undefined || key.length <= 0) {
-//				alert("Please enter key");
-//				return;
-//			}
-//
-//			if ($("#deep_1_gender").is(":checked")) {
-//
-//				btbpConfig.mirror_config.DeepTagList.push($("#deep_1_gender").val());
-//			}
-//			if ($("#deep_2_age").is(":checked")) {
-//				btbpConfig.mirror_config.DeepTagList.push($("#deep_2_age").val());
-//
-//			}
-//			if ($("#deep_3_skin_type").is(":checked")) {
-//				btbpConfig.mirror_config.DeepTagList.push($("#deep_3_skin_type").val());
-//
-//			}
-//			if ($("#deep_4_air_quality").is(":checked")) {
-//				btbpConfig.mirror_config.DeepTagList.push($("#deep_4_air_quality").val());
-//
-//			}
-//
-//			if ($("#deep_5_uv_index").is(":checked")) {
-//
-//				btbpConfig.mirror_config.DeepTagList.push($("#deep_5_uv_index").val());
-//
-//			}
-//			if ($("#deep_6_location").is(":checked")) {
-//				btbpConfig.mirror_config.DeepTagList.push($("#deep_6_location").val());
-//			}
-//
-//
-//			if ($("#deep_7_wrinkles").is(":checked")) {
-//				btbpConfig.mirror_config.SkinFeatureList.push($("#deep_7_wrinkles").val());
-//
-//			}
-//			if ($("#deep_8_acne").is(":checked")) {
-//				btbpConfig.mirror_config.SkinFeatureList.push($("#deep_8_acne").val());
-//
-//			}
-//
-//			if ($("#deep_9_pores").is(":checked")) {
-//
-//				btbpConfig.mirror_config.SkinFeatureList.push($("#deep_9_pores").val());
-//
-//			}
-//			if ($("#deep_10_spots").is(":checked")) {
-//				btbpConfig.mirror_config.SkinFeatureList.push($("#deep_10_spots").val());
-//			}
-//
-//			if ($("#deep_11_redness").is(":checked")) {
-//				btbpConfig.mirror_config.SkinFeatureList.push($("#deep_11_redness").val());
-//			}
-//
-//			if ($("#deep_12_uneven_skinTone").is(":checked")) {
-//				btbpConfig.mirror_config.SkinFeatureList.push($("#deep_12_uneven_skinTone").val());
-//
-//			}
-//			if ($("#deep_13_dark_circles").is(":checked")) {
-//				btbpConfig.mirror_config.SkinFeatureList.push($("#deep_13_dark_circles").val());
-//
-//			}
-//
-//			if ($("#deep_14_lip_health").is(":checked")) {
-//
-//				btbpConfig.mirror_config.SkinFeatureList.push($("#deep_14_lip_health").val());
-//			}
-//
-//
-//			if ($("#deep_15_dehydration").is(":checked")) {
-//				btbpConfig.mirror_config.SkinFeatureList.push($("#deep_15_dehydration").val());
-//			}
-//			if ($("#deep_16_Oiliness").is(":checked")) {
-//				btbpConfig.mirror_config.SkinFeatureList.push($("#deep_16_Oiliness").val());
-//
-//			}
-//			if ($("#beauty_feature_1_lipstick").is(":checked")) {
-//				btbpConfig.mirror_config.BeautyFeatureList.push($("#beauty_feature_1_lipstick").val());
-//
-//			}
-//
-//			if ($("#beauty_feature_2_foundation").is(":checked")) {
-//				btbpConfig.mirror_config.BeautyFeatureList.push($("#beauty_feature_2_foundation").val());
-//
-//			}
-//
-//			if ($("#beauty_feature_3_complexion").is(":checked")) {
-//				btbpConfig.mirror_config.BeautyFeatureList.push($("#beauty_feature_3_complexion").val());
-//
-//			}
-//
-//
-//			if ($("#auto_reset_check_box").is(":checked")) {
-//				btbpConfig.mirror_config.auto_reset = true;
-//
-//			} else {
-//				btbpConfig.mirror_config.auto_reset = false;
-//			}
-//			if ($("#show_settings_check_box").is(":checked")) {
-//				btbpConfig.mirror_config.show_settings = true;
-//
-//			} else {
-//				btbpConfig.mirror_config.show_settings = false;
-//
-//			}
-//			btbpConfig.key = key;
-//
-//			localStorage.clear(btbpConfig);
-//			localStorage.setItem("btbpConfig", JSON.stringify(btbpConfig));
-//
-//			startWidget(btbpConfig);
-//		}
-//
-//		function getCache() {
-//			var retrieveObject = localStorage.getItem("btbpConfig");
-//			var retrieveResultObj = JSON.parse(retrieveObject);
-//			if (retrieveResultObj != null || retrieveResultObj != undefined) {
-//				if (retrieveResultObj.key != undefined || retrieveResultObj.key != "") {
-//					document.getElementById("key").value = retrieveResultObj.key;
-//				}
-//				if (retrieveResultObj.mirror_config.DeepTagList != null) {
-//					for (var i = 0; i < retrieveResultObj.mirror_config.DeepTagList.length; i++) {
-//						if (retrieveResultObj.mirror_config.DeepTagList[i] == "Gender") {
-//							$("#deep_1_gender").attr('checked', true);
-//
-//						}
-//						if (retrieveResultObj.mirror_config.DeepTagList[i] == "Age") {
-//							$("#deep_2_age").attr('checked', true);
-//
-//						}
-//						if (retrieveResultObj.mirror_config.DeepTagList[i] == "Skin Type") {
-//							$("#deep_3_skin_type").attr('checked', true);
-//
-//						}
-//						if (retrieveResultObj.mirror_config.DeepTagList[i] == "Air Quality") {
-//							$("#deep_4_air_quality").attr('checked', true);
-//
-//						}
-//
-//						if (retrieveResultObj.mirror_config.DeepTagList[i] == "UV Index") {
-//							$("#deep_5_uv_index").attr('checked', true);
-//
-//						}
-//						if (retrieveResultObj.mirror_config.DeepTagList[i] == "Location") {
-//							$("#deep_6_location").attr('checked', true);
-//
-//						}
-//
-//					}
-//				}
-//
-//				if (retrieveResultObj.mirror_config.SkinFeatureList != null) {
-//					for (var i = 0; i < retrieveResultObj.mirror_config.SkinFeatureList.length; i++) {
-//
-//						if (retrieveResultObj.mirror_config.SkinFeatureList[i] == "Wrinkles") {
-//							$("#deep_7_wrinkles").attr('checked', true);
-//
-//						}
-//						if (retrieveResultObj.mirror_config.SkinFeatureList[i] == "Acne") {
-//							$("#deep_8_acne").attr('checked', true);
-//
-//						}
-//
-//						if (retrieveResultObj.mirror_config.SkinFeatureList[i] == "Pores") {
-//							$("#deep_9_pores").attr('checked', true);
-//
-//						}
-//						if (retrieveResultObj.mirror_config.SkinFeatureList[i] == "Spots") {
-//							$("#deep_10_spots").attr('checked', true);
-//
-//						}
-//						if (retrieveResultObj.mirror_config.SkinFeatureList[i] == "Redness") {
-//							$("#deep_11_redness").attr('checked', true);
-//
-//						}
-//						if (retrieveResultObj.mirror_config.SkinFeatureList[i] == "Uneven SkinTone") {
-//							$("#deep_12_uneven_skinTone").attr('checked', true);
-//
-//						}
-//						if (retrieveResultObj.mirror_config.SkinFeatureList[i] == "Dark Circles") {
-//							$("#deep_13_dark_circles").attr('checked', true);
-//
-//						}
-//
-//						if (retrieveResultObj.mirror_config.SkinFeatureList[i] == "Lip Health") {
-//							$("#deep_14_lip_health").attr('checked', true);
-//
-//						}
-//						if (retrieveResultObj.mirror_config.SkinFeatureList[i] == "Dehydration") {
-//							$("#deep_15_dehydration").attr('checked', true);
-//
-//						}
-//						if (retrieveResultObj.mirror_config.SkinFeatureList[i] == "Oiliness") {
-//							$("#deep_16_Oiliness").attr('checked', true);
-//
-//						}
-//
-//
-//					}
-//				}
-//
-//
-//				if (retrieveResultObj.mirror_config.BeautyFeatureList != null) {
-//
-//					for (var i = 0; i < retrieveResultObj.mirror_config.BeautyFeatureList.length; i++) {
-//
-//						if (retrieveResultObj.mirror_config.BeautyFeatureList[i] == "Lipstick") {
-//							$("#beauty_feature_1_lipstick").attr('checked', true);
-//						}
-//
-//
-//						if (retrieveResultObj.mirror_config.BeautyFeatureList[i] == "Foundation") {
-//							$("#beauty_feature_2_foundation").attr('checked', true);
-//						}
-//
-//						if (retrieveResultObj.mirror_config.BeautyFeatureList[i] == "Complexion") {
-//							$("#beauty_feature_3_complexion").attr('checked', true);
-//						}
-//					}
-//				}
-//				if (retrieveResultObj.mirror_config.auto_reset == true) {
-//					$("#auto_reset_check_box").attr('checked', true);
-//
-//				}
-//				if (retrieveResultObj.mirror_config.show_settings == true) {
-//					$("#show_settings_check_box").attr('checked', true);
-//				}
-//
-//
-//			}
-//
-//		}
+			var key = $("#key").val();
+			if (key == undefined || key.length <= 0) {
+				alert("Please enter key");
+				return;
+			}
+
+			if ($("#deep_1_gender").is(":checked")) {
+
+				btbpConfig.mirror_config.DeepTagList.push($("#deep_1_gender").val());
+			}
+			if ($("#deep_2_age").is(":checked")) {
+				btbpConfig.mirror_config.DeepTagList.push($("#deep_2_age").val());
+
+			}
+			if ($("#deep_3_skin_type").is(":checked")) {
+				btbpConfig.mirror_config.DeepTagList.push($("#deep_3_skin_type").val());
+
+			}
+			if ($("#deep_4_air_quality").is(":checked")) {
+				btbpConfig.mirror_config.DeepTagList.push($("#deep_4_air_quality").val());
+
+			}
+
+			if ($("#deep_5_uv_index").is(":checked")) {
+
+				btbpConfig.mirror_config.DeepTagList.push($("#deep_5_uv_index").val());
+
+			}
+			if ($("#deep_6_location").is(":checked")) {
+				btbpConfig.mirror_config.DeepTagList.push($("#deep_6_location").val());
+			}
+
+
+			if ($("#deep_7_wrinkles").is(":checked")) {
+				btbpConfig.mirror_config.SkinFeatureList.push($("#deep_7_wrinkles").val());
+
+			}
+			if ($("#deep_8_acne").is(":checked")) {
+				btbpConfig.mirror_config.SkinFeatureList.push($("#deep_8_acne").val());
+
+			}
+
+			if ($("#deep_9_pores").is(":checked")) {
+
+				btbpConfig.mirror_config.SkinFeatureList.push($("#deep_9_pores").val());
+
+			}
+			if ($("#deep_10_spots").is(":checked")) {
+				btbpConfig.mirror_config.SkinFeatureList.push($("#deep_10_spots").val());
+			}
+
+			if ($("#deep_11_redness").is(":checked")) {
+				btbpConfig.mirror_config.SkinFeatureList.push($("#deep_11_redness").val());
+			}
+
+			if ($("#deep_12_uneven_skinTone").is(":checked")) {
+				btbpConfig.mirror_config.SkinFeatureList.push($("#deep_12_uneven_skinTone").val());
+
+			}
+			if ($("#deep_13_dark_circles").is(":checked")) {
+				btbpConfig.mirror_config.SkinFeatureList.push($("#deep_13_dark_circles").val());
+
+			}
+
+			if ($("#deep_14_lip_health").is(":checked")) {
+
+				btbpConfig.mirror_config.SkinFeatureList.push($("#deep_14_lip_health").val());
+			}
+
+
+			if ($("#deep_15_dehydration").is(":checked")) {
+				btbpConfig.mirror_config.SkinFeatureList.push($("#deep_15_dehydration").val());
+			}
+			if ($("#deep_16_Oiliness").is(":checked")) {
+				btbpConfig.mirror_config.SkinFeatureList.push($("#deep_16_Oiliness").val());
+
+			}
+			if ($("#beauty_feature_1_lipstick").is(":checked")) {
+				btbpConfig.mirror_config.BeautyFeatureList.push($("#beauty_feature_1_lipstick").val());
+
+			}
+
+			if ($("#beauty_feature_2_foundation").is(":checked")) {
+				btbpConfig.mirror_config.BeautyFeatureList.push($("#beauty_feature_2_foundation").val());
+
+			}
+
+			if ($("#beauty_feature_3_complexion").is(":checked")) {
+				btbpConfig.mirror_config.BeautyFeatureList.push($("#beauty_feature_3_complexion").val());
+
+			}
+
+
+			if ($("#auto_reset_check_box").is(":checked")) {
+				btbpConfig.mirror_config.auto_reset = true;
+
+			} else {
+				btbpConfig.mirror_config.auto_reset = false;
+			}
+			if ($("#show_settings_check_box").is(":checked")) {
+				btbpConfig.mirror_config.show_settings = true;
+
+			} else {
+				btbpConfig.mirror_config.show_settings = false;
+
+			}
+			btbpConfig.key = key;
+
+			localStorage.clear(btbpConfig);
+			localStorage.setItem("btbpConfig", JSON.stringify(btbpConfig));
+
+			startWidget(btbpConfig);
+		}
+
+		function getCache() {
+			var retrieveObject = localStorage.getItem("btbpConfig");
+			var retrieveResultObj = JSON.parse(retrieveObject);
+			if (retrieveResultObj != null || retrieveResultObj != undefined) {
+				if (retrieveResultObj.key != undefined || retrieveResultObj.key != "") {
+					document.getElementById("key").value = retrieveResultObj.key;
+				}
+				if (retrieveResultObj.mirror_config.DeepTagList != null) {
+					for (var i = 0; i < retrieveResultObj.mirror_config.DeepTagList.length; i++) {
+						if (retrieveResultObj.mirror_config.DeepTagList[i] == "Gender") {
+							$("#deep_1_gender").attr('checked', true);
+
+						}
+						if (retrieveResultObj.mirror_config.DeepTagList[i] == "Age") {
+							$("#deep_2_age").attr('checked', true);
+
+						}
+						if (retrieveResultObj.mirror_config.DeepTagList[i] == "Skin Type") {
+							$("#deep_3_skin_type").attr('checked', true);
+
+						}
+						if (retrieveResultObj.mirror_config.DeepTagList[i] == "Air Quality") {
+							$("#deep_4_air_quality").attr('checked', true);
+
+						}
+
+						if (retrieveResultObj.mirror_config.DeepTagList[i] == "UV Index") {
+							$("#deep_5_uv_index").attr('checked', true);
+
+						}
+						if (retrieveResultObj.mirror_config.DeepTagList[i] == "Location") {
+							$("#deep_6_location").attr('checked', true);
+
+						}
+
+					}
+				}
+
+				if (retrieveResultObj.mirror_config.SkinFeatureList != null) {
+					for (var i = 0; i < retrieveResultObj.mirror_config.SkinFeatureList.length; i++) {
+
+						if (retrieveResultObj.mirror_config.SkinFeatureList[i] == "Wrinkles") {
+							$("#deep_7_wrinkles").attr('checked', true);
+
+						}
+						if (retrieveResultObj.mirror_config.SkinFeatureList[i] == "Acne") {
+							$("#deep_8_acne").attr('checked', true);
+
+						}
+
+						if (retrieveResultObj.mirror_config.SkinFeatureList[i] == "Pores") {
+							$("#deep_9_pores").attr('checked', true);
+
+						}
+						if (retrieveResultObj.mirror_config.SkinFeatureList[i] == "Spots") {
+							$("#deep_10_spots").attr('checked', true);
+
+						}
+						if (retrieveResultObj.mirror_config.SkinFeatureList[i] == "Redness") {
+							$("#deep_11_redness").attr('checked', true);
+
+						}
+						if (retrieveResultObj.mirror_config.SkinFeatureList[i] == "Uneven SkinTone") {
+							$("#deep_12_uneven_skinTone").attr('checked', true);
+
+						}
+						if (retrieveResultObj.mirror_config.SkinFeatureList[i] == "Dark Circles") {
+							$("#deep_13_dark_circles").attr('checked', true);
+
+						}
+
+						if (retrieveResultObj.mirror_config.SkinFeatureList[i] == "Lip Health") {
+							$("#deep_14_lip_health").attr('checked', true);
+
+						}
+						if (retrieveResultObj.mirror_config.SkinFeatureList[i] == "Dehydration") {
+							$("#deep_15_dehydration").attr('checked', true);
+
+						}
+						if (retrieveResultObj.mirror_config.SkinFeatureList[i] == "Oiliness") {
+							$("#deep_16_Oiliness").attr('checked', true);
+
+						}
+
+
+					}
+				}
+
+
+				if (retrieveResultObj.mirror_config.BeautyFeatureList != null) {
+
+					for (var i = 0; i < retrieveResultObj.mirror_config.BeautyFeatureList.length; i++) {
+
+						if (retrieveResultObj.mirror_config.BeautyFeatureList[i] == "Lipstick") {
+							$("#beauty_feature_1_lipstick").attr('checked', true);
+						}
+
+
+						if (retrieveResultObj.mirror_config.BeautyFeatureList[i] == "Foundation") {
+							$("#beauty_feature_2_foundation").attr('checked', true);
+						}
+
+						if (retrieveResultObj.mirror_config.BeautyFeatureList[i] == "Complexion") {
+							$("#beauty_feature_3_complexion").attr('checked', true);
+						}
+					}
+				}
+				if (retrieveResultObj.mirror_config.auto_reset == true) {
+					$("#auto_reset_check_box").attr('checked', true);
+
+				}
+				if (retrieveResultObj.mirror_config.show_settings == true) {
+					$("#show_settings_check_box").attr('checked', true);
+				}
+
+
+			}
+
+		}
 	</script>
 </body>
 
