@@ -9,10 +9,6 @@
 	<link rel="shortcut icon" href="BTBP_icon_ico.ico" type="image/x-icon" />
 
 	<link rel="stylesheet" type="text/css" href="BTBP/css/btbp_mirror.css">
-
-	<script src="BTBP/js/vendor/jquery-1.11.0.js"></script>
-	<script src="BTBP/js/preloadjs-0.6.2.min.js"></script>
-	<script src="BTBP/js/BTBPMirror.js"></script>
 	<style>
 		._button {
 			background: #03111E;
@@ -141,7 +137,6 @@
 
 		var mirror;
 		function startWidget(btbpConfig) {
-			/*
 			var btbpConfig = {
 				content: "mirror_content",
 				key: key,
@@ -153,7 +148,6 @@
 					show_settings: true
 				}
 			};
-			*/
 			btbpConfig.key = "1ATB-CVQG-XYYN-O5Q2";
 			mirror = new BTBPMirror(btbpConfig);
 			mirror.startMirror();
@@ -424,6 +418,9 @@
 
 		}
 	</script>
+	<script src="BTBP/js/vendor/jquery-1.11.0.js"></script>
+	<script src="BTBP/js/preloadjs-0.6.2.min.js"></script>
+	<script src="BTBP/js/BTBPMirror.js"></script>
 </body>
 
 </html>
