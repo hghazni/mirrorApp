@@ -134,7 +134,13 @@
 
 
 	<script>
+		//Hides widget controls on document load
+        $( document ).ready(function() {
+            $("#widget_controls").hide();
+        });
+	</script>
 
+	<script>
 		var mirror;
 		function startWidget(btbpConfig) {
 			var btbpConfig = {
@@ -151,7 +157,6 @@
 			btbpConfig.key = "UQTP-CLGW-Z37H-JXHF";
 			mirror = new BTBPMirror(btbpConfig);
 			mirror.startMirror();
-			$("#widget_controls").hide();
 		}
 
 
