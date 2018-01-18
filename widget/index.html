@@ -158,6 +158,13 @@
 	</script>
 
 	<script>
+        //Hides widget controls on document load
+        $( document ).ready(function() {
+            $("#widget_controlls").hide();
+        });
+	</script>
+
+	<script>
 		function onPageLoad() {
 			getCache();
             showConfig();
@@ -414,11 +421,6 @@
 			}
 
 		}
-	</script>
-
-	<script>
-        //Hides widget controls on document load
-        $("#widget_controls").hide();
 	</script>
 	<script src="BTBP/js/vendor/jquery-1.11.0.js"></script>
 	<script src="BTBP/js/preloadjs-0.6.2.min.js"></script>
