@@ -132,14 +132,6 @@
 
 	<div id="mirror_content" style="position:relative;"></div>
 
-
-	<script>
-		//Hides widget controls on document load
-        $( document ).ready(function() {
-            $("#widget_controls").hide();
-        });
-	</script>
-
 	<script>
 		var mirror;
 		function startWidget(btbpConfig) {
@@ -422,6 +414,11 @@
 			}
 
 		}
+	</script>
+
+	<script>
+        //Hides widget controls on document load
+        $("#widget_controls").hide();
 	</script>
 	<script src="BTBP/js/vendor/jquery-1.11.0.js"></script>
 	<script src="BTBP/js/preloadjs-0.6.2.min.js"></script>
